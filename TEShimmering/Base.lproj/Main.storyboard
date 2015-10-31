@@ -16,13 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oVh-No-JRf">
+                                <rect key="frame" x="241" y="486" width="118" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NGy-10-0PI"/>
+                                    <constraint firstAttribute="width" constant="114" id="xDh-7m-KVI"/>
+                                </constraints>
+                            </slider>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oVh-No-JRf" secondAttribute="bottom" constant="84" id="lA0-vG-INx"/>
+                            <constraint firstItem="oVh-No-JRf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wan-C4-SKN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="oVh-No-JRf" id="lfS-sU-qVt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="429"/>
+            <point key="canvasLocation" x="311" y="353"/>
         </scene>
     </scenes>
 </document>

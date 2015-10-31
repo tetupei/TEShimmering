@@ -10,6 +10,7 @@ import Foundation
 import QuartzCore
 
 final class TEAnimation {
+    //MARK: こっちはまだ使っていない
     static func fadeAnimation(layer: CALayer, opacity: CGFloat, duration: CFTimeInterval) -> CABasicAnimation {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = layer.presentationLayer()?.opacity

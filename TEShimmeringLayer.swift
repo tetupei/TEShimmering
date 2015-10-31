@@ -19,7 +19,6 @@ class TEShimmeringLayer: CALayer {
     var maskLayer: TEShimmeringMaskLayer?
     
     let shimmeringPauseDuration:CGFloat = 0.4
-//    let shimmeringSpeed:CGFloat = 50.0
     let shimmeringHighlightLength:CGFloat = 1.0;
     let shimmeringAnimationOpacity:CGFloat = 0.5
     let shimmeringOpacity:CGFloat = 1.0
@@ -59,7 +58,6 @@ class TEShimmeringLayer: CALayer {
     func createMuskLayerIfNeeded() {
         if self.maskLayer != nil { return }
         self.maskLayer = TEShimmeringMaskLayer()
-//        self.maskLayer?.backgroundColor = UIColor.yellowColor().CGColor
         self.contentLayer?.mask = self.maskLayer
         self.updateMaskColors()
         self.updateMaskLayout()
@@ -68,7 +66,6 @@ class TEShimmeringLayer: CALayer {
     
     func updateMaskColors() {
         if self.maskLayer == nil { return }
-        
         let maskedColor = UIColor(white: 1.0, alpha: self.shimmeringOpacity)
         let unmaskedColor = UIColor(white: 1.0, alpha: self.shimmeringAnimationOpacity)
         self.maskLayer?.colors = [maskedColor.CGColor, unmaskedColor.CGColor, maskedColor.CGColor]
@@ -90,8 +87,5 @@ class TEShimmeringLayer: CALayer {
         self.maskLayer?.position = CGPointMake(-travelDistance, 0)
         self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGFloat(80))
 //        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGRectGetHeight((self.contentLayer?.bounds)!))
-//        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGFloat(80))
-        
-
     }
 }
