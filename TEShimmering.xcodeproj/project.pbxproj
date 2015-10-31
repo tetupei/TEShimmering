@@ -14,6 +14,9 @@
 		7861F37A1BE4639C0047748F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7861F3781BE4639C0047748F /* LaunchScreen.storyboard */; };
 		7861F3851BE4639C0047748F /* TEShimmeringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F3841BE4639C0047748F /* TEShimmeringTests.swift */; };
 		7861F3901BE4639C0047748F /* TEShimmeringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F38F1BE4639C0047748F /* TEShimmeringUITests.swift */; };
+		7861F3DE1BE479CD0047748F /* TEShimmeringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F3DD1BE479CD0047748F /* TEShimmeringView.swift */; };
+		7861F3E21BE47A7E0047748F /* TEShimmeringLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F3E11BE47A7E0047748F /* TEShimmeringLayer.swift */; };
+		7861F3E41BE4856E0047748F /* TEAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F3E31BE4856E0047748F /* TEAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		7861F38B1BE4639C0047748F /* TEShimmeringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TEShimmeringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7861F38F1BE4639C0047748F /* TEShimmeringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEShimmeringUITests.swift; sourceTree = "<group>"; };
 		7861F3911BE4639C0047748F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7861F3DD1BE479CD0047748F /* TEShimmeringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEShimmeringView.swift; sourceTree = "<group>"; };
+		7861F3E11BE47A7E0047748F /* TEShimmeringLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEShimmeringLayer.swift; sourceTree = "<group>"; };
+		7861F3E31BE4856E0047748F /* TEAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,8 @@
 		7861F3631BE4639C0047748F = {
 			isa = PBXGroup;
 			children = (
-				7861F36E1BE4639C0047748F /* TEShimmering */,
+				7861F3DC1BE479A60047748F /* TEShimmering */,
+				7861F36E1BE4639C0047748F /* Sample */,
 				7861F3831BE4639C0047748F /* TEShimmeringTests */,
 				7861F38E1BE4639C0047748F /* TEShimmeringUITests */,
 				7861F36D1BE4639C0047748F /* Products */,
@@ -94,7 +101,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7861F36E1BE4639C0047748F /* TEShimmering */ = {
+		7861F36E1BE4639C0047748F /* Sample */ = {
 			isa = PBXGroup;
 			children = (
 				7861F36F1BE4639C0047748F /* AppDelegate.swift */,
@@ -104,6 +111,7 @@
 				7861F3781BE4639C0047748F /* LaunchScreen.storyboard */,
 				7861F37B1BE4639C0047748F /* Info.plist */,
 			);
+			name = Sample;
 			path = TEShimmering;
 			sourceTree = "<group>";
 		};
@@ -123,6 +131,16 @@
 				7861F3911BE4639C0047748F /* Info.plist */,
 			);
 			path = TEShimmeringUITests;
+			sourceTree = "<group>";
+		};
+		7861F3DC1BE479A60047748F /* TEShimmering */ = {
+			isa = PBXGroup;
+			children = (
+				7861F3DD1BE479CD0047748F /* TEShimmeringView.swift */,
+				7861F3E11BE47A7E0047748F /* TEShimmeringLayer.swift */,
+				7861F3E31BE4856E0047748F /* TEAnimation.swift */,
+			);
+			name = TEShimmering;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7861F3721BE4639C0047748F /* ViewController.swift in Sources */,
+				7861F3DE1BE479CD0047748F /* TEShimmeringView.swift in Sources */,
 				7861F3701BE4639C0047748F /* AppDelegate.swift in Sources */,
+				7861F3E41BE4856E0047748F /* TEAnimation.swift in Sources */,
+				7861F3E21BE47A7E0047748F /* TEShimmeringLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +503,7 @@
 				7861F3961BE4639C0047748F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7861F3971BE4639C0047748F /* Build configuration list for PBXNativeTarget "TEShimmeringTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +512,7 @@
 				7861F3991BE4639C0047748F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7861F39A1BE4639C0047748F /* Build configuration list for PBXNativeTarget "TEShimmeringUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +521,7 @@
 				7861F39C1BE4639C0047748F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
