@@ -17,16 +17,11 @@ enum TEShimmeringDirection {
 
 class TEShimmeringLayer: CALayer {
     var maskLayer: TEShimmeringMaskLayer?
-    
     let shimmeringPauseDuration:CGFloat = 0.4
     let shimmeringHighlightLength:CGFloat = 1.0;
     let shimmeringAnimationOpacity:CGFloat = 0.5
     let shimmeringOpacity:CGFloat = 1.0
     let shimmetingDirection = TEShimmeringDirection.Right
-//    let shimmeringBeginFadeDuration = 0.1;
-//    let shimmeringEndFadeDuration = 0.3;
-    
-//    var shouldshimmering = true //shimmering flag
     
     var contentLayer: CALayer? {
         didSet {
@@ -40,38 +35,34 @@ class TEShimmeringLayer: CALayer {
         }
     }
     
-    func updateShimmering() {
+    private func updateShimmering() {
         self.createMuskLayerIfNeeded()
         [self .layoutIfNeeded()]
-        let fadeAnimation = TEAnimation.fadeAnimation((self.maskLayer?.fadeLayer)! , opacity: 0, duration: 1)
-        self.contentLayer?.mask?.addAnimation(fadeAnimation, forKey: "fade")
-        //self.maskLayer?.mask?.addAnimation(fadeAnimation, forKey: "fade")
-        //var slideAnimation = self.maskLayer?.animationForKey("slide")
         let length = CGRectGetWidth(self.contentLayer!.bounds)
         let animateDuration = (length / self.shimmeringSpeed) + self.shimmeringPauseDuration
         let slideAnimation = TEAnimation.slideAnimation(CFTimeInterval(animateDuration), direction: self.shimmetingDirection)
         slideAnimation.removedOnCompletion  = false
-        slideAnimation.beginTime = CACurrentMediaTime() + fadeAnimation.duration
+        slideAnimation.beginTime = CACurrentMediaTime()
         self.maskLayer!.addAnimation(slideAnimation, forKey: "slide")
     }
     
-    func createMuskLayerIfNeeded() {
+    private func createMuskLayerIfNeeded() {
         if self.maskLayer != nil { return }
         self.maskLayer = TEShimmeringMaskLayer()
         self.contentLayer?.mask = self.maskLayer
-        self.updateMaskColors()
+//        self.updateMaskColors()
         self.updateMaskLayout()
         
     }
     
-    func updateMaskColors() {
+    private func updateMaskColors() {
         if self.maskLayer == nil { return }
         let maskedColor = UIColor(white: 1.0, alpha: self.shimmeringOpacity)
         let unmaskedColor = UIColor(white: 1.0, alpha: self.shimmeringAnimationOpacity)
         self.maskLayer?.colors = [maskedColor.CGColor, unmaskedColor.CGColor, maskedColor.CGColor]
     }
     
-    func updateMaskLayout() {
+    private func updateMaskLayout() {
         //MARK: 方向によって、出し分ける
         let length: CGFloat =  CGRectGetWidth((self.contentLayer?.bounds)!)
         let extraDistance = length + self.shimmeringSpeed + self.shimmeringPauseDuration
@@ -85,7 +76,7 @@ class TEShimmeringLayer: CALayer {
         self.maskLayer?.startPoint = CGPointMake(startPoint, 0)
         self.maskLayer?.endPoint = CGPointMake(endPoint, 0)
         self.maskLayer?.position = CGPointMake(-travelDistance, 0)
-        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGFloat(80))
+        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGFloat(80)) //TODO heightのhard codeを修正する。
 //        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGRectGetHeight((self.contentLayer?.bounds)!))
     }
 }

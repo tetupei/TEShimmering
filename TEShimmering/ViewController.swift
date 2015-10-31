@@ -11,30 +11,30 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var slider: UISlider!
-    var shimmeringView: TEShimmeringView!
+    var btnShimmeringView: TEShimmeringView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //label
         let rect = CGRectMake(80, 80, 200, 50)
-        self.shimmeringView = TEShimmeringView(frame: rect)
-        self.view.addSubview(self.shimmeringView)
-        let loadingLabel = UILabel(frame: self.shimmeringView.bounds)
+        let shimmeringView = TEShimmeringView(frame: rect)
+        self.view.addSubview(shimmeringView)
+        let loadingLabel = UILabel(frame: shimmeringView.bounds)
         loadingLabel.textAlignment = NSTextAlignment.Center
         loadingLabel.text = "TEShimmering"
         loadingLabel.textColor = UIColor.blackColor()
         shimmeringView.contentView = loadingLabel
-        shimmeringView.setShimmeringSpeed(30)
         
         //button
         let rect2 = CGRectMake(80, 300, 200, 50)
-        let btnShimmeringView = TEShimmeringView(frame: rect2)
-        self.view.addSubview(btnShimmeringView)
-        let button = UIButton(frame: btnShimmeringView.bounds)
+        self.btnShimmeringView = TEShimmeringView(frame: rect2)
+        self.view.addSubview(self.btnShimmeringView)
+        let button = UIButton(frame: self.btnShimmeringView.bounds)
         button.setTitle("TEShimmering", forState: UIControlState.Normal)
         button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         btnShimmeringView.contentView = button
         button.addTarget(self, action: "pushedButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        btnShimmeringView.setShimmeringSpeed(0)
         
         //slider
         self.slider.maximumValue = 300
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     }
     
     internal func onChangeValueMySlider(sender : UISlider){
-        self.shimmeringView.setShimmeringSpeed(CGFloat(sender.value))
+        self.btnShimmeringView.setShimmeringSpeed(CGFloat(sender.value))
     }
     
 

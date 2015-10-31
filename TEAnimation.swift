@@ -10,7 +10,7 @@ import Foundation
 import QuartzCore
 
 final class TEAnimation {
-    //MARK: こっちはまだ使っていない
+    //MARK: こっちはまだ使っていない==============
     static func fadeAnimation(layer: CALayer, opacity: CGFloat, duration: CFTimeInterval) -> CABasicAnimation {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = layer.presentationLayer()?.opacity
@@ -18,6 +18,7 @@ final class TEAnimation {
         animation.duration = duration
         return animation
     }
+    //======================================
     
     static func slideAnimation(duration:CFTimeInterval, direction: TEShimmeringDirection) -> CABasicAnimation {
         let animation = CABasicAnimation(keyPath: "position")
