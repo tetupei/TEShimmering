@@ -19,7 +19,11 @@ final class TEAnimation {
         return animation
     }
     
-    static func slideAnimation(duration:CFTimeInterval, direction: TEShimmeringDirection) {
-        
+    static func slideAnimation(duration:CFTimeInterval, direction: TEShimmeringDirection) -> CABasicAnimation {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.toValue = NSValue(CGPoint: CGPointZero)
+        animation.duration = duration
+        animation.repeatCount = .infinity
+        return animation
     }
 }

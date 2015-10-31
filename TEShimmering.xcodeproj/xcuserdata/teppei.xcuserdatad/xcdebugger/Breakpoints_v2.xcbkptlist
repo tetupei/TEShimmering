@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TEShimmeringLayer.swift"
-            timestampString = "467969385.467618"
+            timestampString = "467970479.575639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "createMuskLayerIfNeeded()"
             landmarkType = "5">
          </BreakpointContent>
