@@ -27,12 +27,11 @@ class TEShimmeringView: UIView {
         willSet(newValue) {
             self.hasOldContentView = (self.contentView == newValue)
         }
-        didSet(newValue) {
-            guard let tmpNewValue = newValue else { return }
+        didSet {
             if self.hasOldContentView { return }
-            self.addSubview(tmpNewValue)
+            self.addSubview(self.contentView!)
             let layer = self.layer as! TEShimmeringLayer
-            layer.contentLayer = tmpNewValue.layer
+            layer.contentLayer = self.contentView?.layer
         }
     }
     

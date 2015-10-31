@@ -17,6 +17,7 @@
 		7861F3DE1BE479CD0047748F /* TEShimmeringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F3DD1BE479CD0047748F /* TEShimmeringView.swift */; };
 		7861F3E21BE47A7E0047748F /* TEShimmeringLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F3E11BE47A7E0047748F /* TEShimmeringLayer.swift */; };
 		7861F3E41BE4856E0047748F /* TEAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F3E31BE4856E0047748F /* TEAnimation.swift */; };
+		7861F3E61BE4983B0047748F /* TEShimmeringMaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861F3E51BE4983B0047748F /* TEShimmeringMaskLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7861F3DD1BE479CD0047748F /* TEShimmeringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEShimmeringView.swift; sourceTree = "<group>"; };
 		7861F3E11BE47A7E0047748F /* TEShimmeringLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEShimmeringLayer.swift; sourceTree = "<group>"; };
 		7861F3E31BE4856E0047748F /* TEAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEAnimation.swift; sourceTree = "<group>"; };
+		7861F3E51BE4983B0047748F /* TEShimmeringMaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TEShimmeringMaskLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				7861F3DD1BE479CD0047748F /* TEShimmeringView.swift */,
 				7861F3E11BE47A7E0047748F /* TEShimmeringLayer.swift */,
 				7861F3E31BE4856E0047748F /* TEAnimation.swift */,
+				7861F3E51BE4983B0047748F /* TEShimmeringMaskLayer.swift */,
 			);
 			name = TEShimmering;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				7861F3701BE4639C0047748F /* AppDelegate.swift in Sources */,
 				7861F3E41BE4856E0047748F /* TEAnimation.swift in Sources */,
 				7861F3E21BE47A7E0047748F /* TEShimmeringLayer.swift in Sources */,
+				7861F3E61BE4983B0047748F /* TEShimmeringMaskLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,15 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var shimmeringView: TEShimmeringView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let shimmeringView = TEShimmeringView(frame: self.view.bounds)
-        self.view.addSubview(shimmeringView)
-        let loadingLabel = UILabel(frame: shimmeringView.bounds)
+        let rect = CGRectMake(80, 0, 200, 50)
+        self.shimmeringView = TEShimmeringView(frame: rect)
+        self.view.addSubview(self.shimmeringView)
+        let loadingLabel = UILabel(frame: self.shimmeringView.bounds)
         loadingLabel.textAlignment = NSTextAlignment.Center
         loadingLabel.text = "TEShimmering"
+        loadingLabel.textColor = UIColor.blackColor()
         shimmeringView.contentView = loadingLabel
         
         
@@ -33,6 +35,12 @@ class ViewController: UIViewController {
 //        shimmeringView.shimmering = YES;
     }
 
+    @IBAction func pushedButton(sender: AnyObject) {
+        let layer = self.shimmeringView?.layer as! TEShimmeringLayer
+        layer.updateShimmering()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

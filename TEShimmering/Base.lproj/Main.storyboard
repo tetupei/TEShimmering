@@ -17,23 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ7-yC-8Rx">
-                                <rect key="frame" x="231" y="284" width="138" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sca-mt-ufG">
+                                <rect key="frame" x="277" y="395" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="3kL-GR-oaJ"/>
-                                    <constraint firstAttribute="width" constant="138" id="VEf-cP-ohr"/>
+                                    <constraint firstAttribute="height" constant="30" id="c4C-AC-KJu"/>
+                                    <constraint firstAttribute="width" constant="46" id="ggi-YD-O4a"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pushedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FJF-4B-fFQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bQ7-yC-8Rx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ee-Nc-Yms"/>
-                            <constraint firstItem="bQ7-yC-8Rx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sAj-Iz-gdi"/>
+                            <constraint firstItem="sca-mt-ufG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1hu-Nl-aR4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sca-mt-ufG" secondAttribute="bottom" constant="175" id="iaY-az-aLC"/>
                         </constraints>
                     </view>
                 </viewController>
