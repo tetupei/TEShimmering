@@ -19,7 +19,7 @@ class TEShimmeringLayer: CALayer {
     var maskLayer: TEShimmeringMaskLayer?
     
     let shimmeringPauseDuration:CGFloat = 0.4
-    let shimmeringSpeed:CGFloat = 230.0
+//    let shimmeringSpeed:CGFloat = 50.0
     let shimmeringHighlightLength:CGFloat = 1.0;
     let shimmeringAnimationOpacity:CGFloat = 0.5
     let shimmeringOpacity:CGFloat = 1.0
@@ -31,8 +31,13 @@ class TEShimmeringLayer: CALayer {
     
     var contentLayer: CALayer? {
         didSet {
-            //guard let _ = newValue else { return }
-            //self.updateShimmering()
+            self.updateShimmering()
+        }
+    }
+    
+    var shimmeringSpeed:CGFloat = 50.0 {
+        didSet {
+            self.updateShimmering()
         }
     }
     
@@ -40,25 +45,21 @@ class TEShimmeringLayer: CALayer {
         self.createMuskLayerIfNeeded()
         [self .layoutIfNeeded()]
         let fadeAnimation = TEAnimation.fadeAnimation((self.maskLayer?.fadeLayer)! , opacity: 0, duration: 1)
-        //self.contentLayer?.mask?.addAnimation(fadeAnimation, forKey: "fade")
+        self.contentLayer?.mask?.addAnimation(fadeAnimation, forKey: "fade")
         //self.maskLayer?.mask?.addAnimation(fadeAnimation, forKey: "fade")
         //var slideAnimation = self.maskLayer?.animationForKey("slide")
         let length = CGRectGetWidth(self.contentLayer!.bounds)
         let animateDuration = (length / self.shimmeringSpeed) + self.shimmeringPauseDuration
-        //if slideAnimation == nil {
-            let slideAnimation = TEAnimation.slideAnimation(CFTimeInterval(animateDuration), direction: self.shimmetingDirection)
-            slideAnimation.fillMode = kCAFillModeForwards
-            slideAnimation.removedOnCompletion  = false
-            slideAnimation.beginTime = CACurrentMediaTime() + fadeAnimation.duration
-            self.maskLayer!.addAnimation(slideAnimation, forKey: "slide")
-        //}
-        
+        let slideAnimation = TEAnimation.slideAnimation(CFTimeInterval(animateDuration), direction: self.shimmetingDirection)
+        slideAnimation.removedOnCompletion  = false
+        slideAnimation.beginTime = CACurrentMediaTime() + fadeAnimation.duration
+        self.maskLayer!.addAnimation(slideAnimation, forKey: "slide")
     }
     
     func createMuskLayerIfNeeded() {
         if self.maskLayer != nil { return }
         self.maskLayer = TEShimmeringMaskLayer()
-        self.maskLayer?.backgroundColor = UIColor.yellowColor().CGColor
+//        self.maskLayer?.backgroundColor = UIColor.yellowColor().CGColor
         self.contentLayer?.mask = self.maskLayer
         self.updateMaskColors()
         self.updateMaskLayout()
@@ -87,7 +88,9 @@ class TEShimmeringLayer: CALayer {
         self.maskLayer?.startPoint = CGPointMake(startPoint, 0)
         self.maskLayer?.endPoint = CGPointMake(endPoint, 0)
         self.maskLayer?.position = CGPointMake(-travelDistance, 0)
-        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGRectGetHeight((self.contentLayer?.bounds)!))
+        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGFloat(80))
+//        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGRectGetHeight((self.contentLayer?.bounds)!))
+//        self.maskLayer?.bounds = CGRectMake(0, 0, fullShimmerLength, CGFloat(80))
         
 
     }

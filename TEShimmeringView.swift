@@ -35,4 +35,9 @@ class TEShimmeringView: UIView {
         }
     }
     
+    func setShimmeringSpeed(speed: CGFloat) {
+        let layer = self.layer as! TEShimmeringLayer
+        layer.shimmeringSpeed = speed
+    }
+    
 }
