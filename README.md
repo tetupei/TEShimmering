@@ -8,3 +8,4 @@
   btnShimmeringView.contentView = button
   btnShimmeringView.setShimmeringSpeed(30)
   ```
+  https://github.com/tetupei/TEShimmering/blob/master/demo.gif
