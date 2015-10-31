@@ -8,4 +8,9 @@
   btnShimmeringView.contentView = button
   btnShimmeringView.setShimmeringSpeed(30)
   ```
-  https://github.com/tetupei/TEShimmering/blob/master/demo.gif
+  Demo apps
+-----
+  <p align="center">
+<img style="-webkit-user-select: none;" src="https://github.com/tetupei/TEShimmering/blob/master/demo.gif" width="368" height="664">
+</p>
+
